@@ -33,7 +33,7 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log, $ionicLoadin
       });
     });
   }
-  
+
   function updateName () {
     if (_.isEmpty(this.name)) return;
 
@@ -47,7 +47,7 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log, $ionicLoadin
     $log.error('profile save error ', err);
 
     $ionicPopup.alert({
-      title: err.reason || 'Save failed',
+      title: err ? err.reason : 'Save failed',
       template: 'Please try again',
       okType: 'button-positive button-clear'
     });

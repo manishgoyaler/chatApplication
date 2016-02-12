@@ -23,7 +23,7 @@ function ConfirmationCtrl($scope, $reactive, $state, $ionicPopup, $log) {
     $log.error('Verfication error ', err);
 
     $ionicPopup.alert({
-      title: err.reason || 'Verfication failed',
+      title: err ? err.reason : 'Verfication failed',
       template: 'Please try again',
       okType: 'button-positive button-clear'
     });

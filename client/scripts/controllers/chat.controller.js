@@ -32,7 +32,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
 
 
   ////////////
-  
+
   function sendPicture () {
     MeteorCameraUI.getPicture({}, (err, data) => {
       if (err && err.error == 'cancel') return;
@@ -49,7 +49,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   function handleError (err) {
     $log.error('profile save error ', err);
     $ionicPopup.alert({
-      title: err.reason || 'Save failed',
+      title: err ? err.reason : 'Save failed',
       template: 'Please try again',
       okType: 'button-positive button-clear'
     });
