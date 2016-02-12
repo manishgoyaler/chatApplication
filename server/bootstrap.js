@@ -1,25 +1,24 @@
 Meteor.startup(function () {
-    if (Chats.find().count() !== 0) return;
+  if (Meteor.users.find().count() != 0) return;
 
   Accounts.createUserWithPhone({
-    phone: '+172501234567',
+    phone: '+972501234567',
     profile: {
       name: 'My friend 1'
     }
   });
 
   Accounts.createUserWithPhone({
-    phone: '+172501234568',
+    phone: '+972501234568',
     profile: {
       name: 'My friend 2'
     }
   });
 
   Accounts.createUserWithPhone({
-    phone: '+172501234569',
+    phone: '+972501234569',
     profile: {
       name: 'My friend 3'
     }
-
-     });
+  });
 });
