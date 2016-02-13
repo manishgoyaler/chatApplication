@@ -10,6 +10,6 @@ function chatName() {
     let otherUser = Meteor.users.findOne(otherId);
     let hasName = otherUser && otherUser.profile && otherUser.profile.name;
 
-    return hasName ? otherUser.profile.name : chat.name || 'NO NAME';
+    return hasName ? otherUser.profile.name : (chat.name || 'NO NAME') ;
   };
 }

@@ -23,7 +23,7 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
   }
 
   function newChat(userId) {
-    let chat = Chats.findOne({ type: 'chat', userIds: { $all: [Meteor.userId(), userId] } });
+    let chat = Chats.findOne({ userIds: { $all: [Meteor.userId(), userId] } });
     if (chat) {
       return goToChat(chat._id);
     }
@@ -31,8 +31,9 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
     Meteor.call('newChat', userId, goToChat);
   }
 
-  function goToChat(chatId) {
+  function goToChat(chatId1 ,chatId2 ) {
+    debugger;
     hideNewChatModal();
-    return $state.go('tab.chat', { chatId: chatId });
+    return $state.go('tab.chat', { chatId: chatId2 });
   }
 }
