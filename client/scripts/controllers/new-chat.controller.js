@@ -32,8 +32,8 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
   }
 
   function goToChat(chatId1 ,chatId2 ) {
-    debugger;
+    //debugger;
     hideNewChatModal();
-    return $state.go('tab.chat', { chatId: chatId2 });
+    return $state.go('tab.chat', { chatId: chatId1 || chatId2 });
   }
 }
